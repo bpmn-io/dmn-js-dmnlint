@@ -1,0 +1,167 @@
+.djsl-overlay {
+  z-index: 500;
+}
+
+.djsl-overlay:hover {
+  z-index: 1000;
+}
+
+.djsl-dropdown {
+  display: none;
+}
+
+.djsl-overlay:hover .djsl-dropdown,
+.djsl-dropdown.open {
+  display: block;
+}
+
+.djsl-issues {
+  padding: 8px;
+  color: #444;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  background: #FAFAFA;
+  border: solid 1px #CCC;
+  border-radius: 2px;
+}
+
+.djsl-icon {
+  background: white;
+  border-radius: 100%;
+  display: inline-block;
+  height: 20px;
+  line-height: 23px;
+  text-align: center;
+  width: 20px;
+}
+
+.djsl-icon-error {
+  background-color: #cc3300;
+  color: white;
+
+  /* color: #cc3300; */
+}
+
+.djsl-icon-warning {
+  background-color: #f7c71a;
+  color: white;
+
+  /* color: #f7c71a; */
+}
+
+.djsl-overlay {
+  position: relative;
+}
+
+.djsl-issues-top-right .djsl-dropdown,
+.djsl-issues-bottom-right .djsl-dropdown-content {
+  top: 0;
+  left: 0;
+}
+
+.djsl-issues-bottom-right .djsl-dropdown,
+.djsl-issues-top-right .djsl-dropdown-content {
+  bottom: 0;
+  left: 0;
+}
+
+.djsl-issues-top-right .djsl-dropdown-content {
+  padding-bottom: 5px;
+}
+
+.djsl-issues-bottom-right .djsl-dropdown-content {
+  padding-top: 5px;
+}
+
+.djsl-dropdown-content {
+  min-width: 260px;
+  position:  absolute;
+  height: fit-content;
+}
+
+.djsl-dropdown {
+  position: absolute;
+}
+
+.djsl-issues {
+  list-style: none;
+  margin: 0;
+}
+
+.djsl-issues ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.djsl-issues li {
+  display: flex;
+  flex-direction: row;
+}
+
+.djsl-issues li:not(:first-child) {
+  margin-top: 7px;
+}
+
+.djsl-issues .error svg {
+  color: #cc3300;
+}
+
+.djsl-issues .warning svg {
+  color: #f7c71a;
+}
+
+.djsl-issues a {
+  color: #444;
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+.djsl-issues a:hover {
+  text-decoration: none;
+}
+
+
+/**
+ * Summary button styles
+ */
+
+.djsl-button {
+  border-radius: 100px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fafafa;
+  padding: 5px 10px;
+  border: none;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  outline: none;
+  font-weight: bold;
+}
+
+.djsl-button-inactive:hover {
+  color: #444;
+}
+
+.djsl-button svg {
+  margin-top: -1px;
+  margin-right: 10px;
+}
+
+.djsl-button-success {
+  background-color: #52b415;
+  color: white;
+}
+
+.djsl-button-error {
+  background-color: #cc3300;
+  color: white;
+}
+
+.djsl-button-warning {
+  background-color: #f7c71a;
+  color: white;
+}
