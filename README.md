@@ -11,19 +11,21 @@ See this extension in action as part of the [dmnlint playground (TODO)](https://
 Integrate the linter into [dmn-js](https://github.com/bpmn-io/dmn-js):
 
 ```javascript
-import lintModule from 'dmn-js-dmnlint';
+import { DrdLinting } from 'dmn-js-dmnlint';
 
 import DmnModeler from 'dmn-js/lib/Modeler';
 
 import dmnlintConfig from './.dmnlintrc';
 
 var modeler = new DmnModeler({
-  linting: {
-    dmnlint: dmnlintConfig
+  common: {
+    linting: dmnlintConfig
   },
-  additionalModules: [
-    lintModule
-  ]
+  drd: {
+    additionalModules: [
+      DrdLinting
+    ]
+  }
 });
 ```
 
