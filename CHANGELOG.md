@@ -6,6 +6,10 @@ All notable changes to [dmn-js-dmnlint](https://github.com/bpmn-io/dmn-js-dmnlin
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.1.1
+
+* `FIX`: fix config setter
+
 ## 0.1.0
 
 * `FEAT`: initial release :tada:
