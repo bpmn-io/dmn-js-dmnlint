@@ -1,6 +1,6 @@
 # dmn-js-dmnlint
 
-[![Build Status](https://travis-ci.com/bpmn-io/dmn-js-dmnlint.svg?branch=master)](https://travis-ci.com/bpmn-io/dmn-js-dmnlint)
+[![CI](https://github.com/bpmn-io/dmn-js-dmnlint/workflows/CI/badge.svg)](https://github.com/bpmn-io/dmn-js-dmnlint/actions?query=workflow%3ACI)
 
 Integrates [dmnlint](https://github.com/bpmn-io/dmnlint) into [dmn-js](https://github.com/bpmn-io/dmn-js).
 
