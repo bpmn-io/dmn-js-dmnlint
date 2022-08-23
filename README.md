@@ -33,7 +33,7 @@ var modeler = new DmnModeler({
 
 Use an appropriate plugin/loader for your module bundler (cf. [rollup-plugin-dmnlint](https://github.com/bpmn-io/rollup-plugin-dmnlint), [dmnlint-loader](https://github.com/bpmn-io/dmnlint-loader)) to bundle the dmnlint configuration directly with your application as [shown above](#usage).
 
-Alternatively, pack your local `.dmnlintrc` file using the [dmnlint-pack-config (TODO)](https://github.com/nikku/dmnlint-pack-config) utility:
+Alternatively, pack your local `.dmnlintrc` file using the [dmnlint-pack-config (TODO)](https://github.com/bpmn-io/dmnlint-pack-config) utility:
 
 ```shell
 dmnlint-pack-config -c .dmnlintrc -o bundled-config.js
