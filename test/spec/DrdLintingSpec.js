@@ -81,8 +81,11 @@ describe('i18n', function() {
     const diagram = require('./diagram.dmn');
 
     function translateModule(template, replacements = {}) {
+
+      // Translate
       let transTemplate = translations[template] || template;
 
+      // Replace
       return transTemplate.replace(/{([^}]+)}/g, function(_, key) {
         return key in replacements ? replacements[key] : '{' + key + '}';
       });
