@@ -125,6 +125,8 @@ describe('i18n', function() {
 
     linting.toggle(true);
 
+    // then
+
     eventBus.once('linting.completed', function(event) {
 
       const button = container.querySelector('button.djsl-button.djsl-button-error');
