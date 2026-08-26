@@ -73,7 +73,7 @@ module.exports = function(karma) {
           },
           {
             test: /\.(css|dmn|svg)$/,
-            use: 'raw-loader'
+            type: 'asset/source'
           }
         ]
       },
