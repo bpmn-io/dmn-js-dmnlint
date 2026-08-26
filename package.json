@@ -39,7 +39,6 @@
     "mocha": "^11.8.0",
     "mocha-test-container-support": "^0.2.0",
     "npm-run-all2": "^9.0.3",
-    "puppeteer": "^1.19.0",
     "rollup": "^1.17.0",
     "rollup-plugin-string": "^3.0.0",
     "webpack": "^5.109.2"
