@@ -4,6 +4,8 @@ All notable changes to [dmn-js-dmnlint](https://github.com/bpmn-io/dmn-js-dmnlin
 
 ## Unreleased
 
+* `DEPS`: update to `min-dash@3.8.1`
+
 ___Note:__ Yet to be released changes appear here._
 
 ## 0.1.1
