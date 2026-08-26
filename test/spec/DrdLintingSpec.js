@@ -6,6 +6,8 @@ import Modeler from 'dmn-js/lib/Modeler';
 
 import { DrdLinting } from '../../lib';
 
+import { expect } from 'chai';
+
 import TestContainer from 'mocha-test-container-support';
 
 import dmnlintrc from './.dmnlintrc';
