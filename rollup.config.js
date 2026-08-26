@@ -3,7 +3,7 @@ import pkg from './package.json';
 import { string } from 'rollup-plugin-string';
 import resolve from '@rollup/plugin-node-resolve';
 
-function pgl(plugins=[]) {
+function pgl(plugins = []) {
   return [
     resolve(),
     string({

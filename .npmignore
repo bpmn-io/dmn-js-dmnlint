@@ -2,7 +2,6 @@ assets
 test
 lib
 !dist/*
-.eslintrc
-.eslintignore
+eslint.config.mjs
 karma.conf.js
 rollup.config.js
