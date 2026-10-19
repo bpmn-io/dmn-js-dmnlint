@@ -4,10 +4,13 @@ All notable changes to [dmn-js-dmnlint](https://github.com/bpmn-io/dmn-js-dmnlin
 
 ## Unreleased
 
+___Note:__ Yet to be released changes appear here._
+
+## 0.2.0
+
+* `FEAT`: use translate service ([#1](https://github.com/bpmn-io/dmn-js-dmnlint/pull/1))
 * `DEPS`: update to `min-dash@3.8.1`
 * `DEPS`: update to `min-dom@3.2.1`
-
-___Note:__ Yet to be released changes appear here._
 
 ## 0.1.1
 
