@@ -25,13 +25,13 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "chai": "^6.2.2",
+    "chai": "^6.3.0",
     "cpx": "^1.5.0",
     "dmn-js": "^8.2.0",
     "dmnlint": "^0.2.0",
     "dmnlint-loader": "^0.1.0",
     "eslint": "^9.39.5",
-    "eslint-plugin-bpmn-io": "^2.3.1",
+    "eslint-plugin-bpmn-io": "^2.4.0",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.2.0",
     "karma-mocha": "^2.0.1",
@@ -41,7 +41,7 @@
     "npm-run-all2": "^9.0.3",
     "rollup": "^1.17.0",
     "rollup-plugin-string": "^3.0.0",
-    "webpack": "^5.109.2"
+    "webpack": "^5.111.1"
   },
   "dependencies": {
     "diagram-js": "^5.1.1",
