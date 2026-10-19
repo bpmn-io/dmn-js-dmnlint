@@ -40,15 +40,11 @@ describe('linting', function() {
       }
     });
 
-    modeler.importXML(diagram, function(error) {
-      if (error) {
-        return done(error);
-      }
-
+    modeler.importXML(diagram).then(function() {
       editor = modeler.getActiveViewer();
 
       done();
-    });
+    }).catch(done);
   });
 
 
@@ -106,15 +102,11 @@ describe('i18n', function() {
       }
     });
 
-    modeler.importXML(diagram, function(error) {
-      if (error) {
-        return done(error);
-      }
-
+    modeler.importXML(diagram).then(function() {
       editor = modeler.getActiveViewer();
 
       done();
-    });
+    }).catch(done);
   });
 
   it('should translate lint issues text', function(done) {

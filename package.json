@@ -25,9 +25,10 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "axe-core": "^4.14.0",
     "chai": "^6.3.0",
     "cpx": "^1.5.0",
-    "dmn-js": "^8.2.0",
+    "dmn-js": "^17.12.3",
     "dmnlint": "^0.2.0",
     "dmnlint-loader": "^0.1.0",
     "eslint": "^9.39.5",
