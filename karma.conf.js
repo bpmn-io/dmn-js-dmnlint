@@ -2,6 +2,8 @@
 
 var path = require('path');
 
+var singleStart = process.env.SINGLE_START;
+
 var absoluteBasePath = path.resolve(__dirname);
 
 // configures browsers to run test against
@@ -15,7 +17,8 @@ var suite = 'test/suite.js';
 
 
 module.exports = function(karma) {
-  karma.set({
+
+  var config = {
 
     frameworks: [
       'mocha'
@@ -26,7 +29,7 @@ module.exports = function(karma) {
     ],
 
     preprocessors: {
-      [suite]: [ 'webpack' ]
+      [suite]: [ 'webpack', 'env' ]
     },
 
     reporters: [ 'progress' ],
@@ -60,5 +63,12 @@ module.exports = function(karma) {
       }
     },
     devtool: 'eval-source-map'
-  });
+  };
+
+  if (singleStart) {
+    config.browsers = [].concat(config.browsers, 'Debug');
+    config.envPreprocessor = [].concat(config.envPreprocessor || [], 'SINGLE_START');
+  }
+
+  karma.set(config);
 };

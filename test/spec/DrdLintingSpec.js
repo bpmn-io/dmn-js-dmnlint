@@ -15,7 +15,16 @@ import dmnlintrc from './.dmnlintrc';
 insertCSS('dmn-js-dmnlint', require('assets/css/dmn-js-drd-dmnlint.css'));
 
 insertCSS('diagram-js', require('dmn-js/dist/assets/diagram-js.css'));
+insertCSS('dmn-js-shared', require('dmn-js/dist/assets/dmn-js-shared.css'));
+insertCSS('dmn-js-drd', require('dmn-js/dist/assets/dmn-js-drd.css'));
+insertCSS('dmn-js-decision-table', require('dmn-js/dist/assets/dmn-js-decision-table.css'));
+insertCSS('dmn-js-decision-table-controls', require('dmn-js/dist/assets/dmn-js-decision-table-controls.css'));
+insertCSS('dmn-js-literal-expression', require('dmn-js/dist/assets/dmn-js-literal-expression.css'));
+insertCSS('dmn-js-boxed-expression', require('dmn-js/dist/assets/dmn-js-boxed-expression.css'));
+insertCSS('dmn-js-boxed-expression-controls', require('dmn-js/dist/assets/dmn-js-boxed-expression-controls.css'));
 insertCSS('dmn-font', require('dmn-js/dist/assets/dmn-font/css/dmn-embedded.css'));
+
+var singleStart = window.__env__ && window.__env__.SINGLE_START === 'true';
 
 
 describe('linting', function() {
@@ -48,7 +57,7 @@ describe('linting', function() {
   });
 
 
-  it('should load specified config', function() {
+  (singleStart ? it.only : it)('should load specified config', function() {
 
     // when
     const linting = editor.get('linting'),

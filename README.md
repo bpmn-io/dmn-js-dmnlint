@@ -58,8 +58,10 @@ linting.setLinterConfig(dmnlintConfig);
 
 ```shell
 npm install
-npm run dev
+npm start
 ```
+
+`npm start` opens the test suite in a debuggable browser, running a single test (`it.only` via `SINGLE_START`). Use `npm run dev` to run the full suite in watch mode.
 
 ## Credits
 
