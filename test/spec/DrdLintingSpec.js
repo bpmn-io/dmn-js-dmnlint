@@ -57,7 +57,7 @@ describe('linting', function() {
   });
 
 
-  (singleStart ? it.only : it)('should load specified config', function() {
+  it('should load specified config', function() {
 
     // when
     const linting = editor.get('linting'),
@@ -150,3 +150,133 @@ describe('i18n', function() {
   });
 
 });
+
+describe('report categories', function() {
+
+  let container, editor;
+
+  function createModeler(rules) {
+
+    const StaticResolver = require('dmnlint/lib/resolver/static-resolver');
+
+    return new Modeler({
+      container: container,
+      drd: {
+        additionalModules: [
+          DrdLinting
+        ]
+      },
+      common: {
+        linting: {
+          active: true,
+          config: {
+            rules
+          },
+          resolver: new StaticResolver({
+            'rule:dmnlint/label-required': require('dmnlint/rules/label-required'),
+            'rule:dmnlint-plugin-foo/info': function() {
+              return {
+                check(node, reporter) {
+                  if (node.$type === 'dmn:Decision') {
+                    reporter.report(node.id, 'Decision is not documented');
+                  }
+                }
+              };
+            },
+            'rule:dmnlint-plugin-foo/rule-error': function() {
+              return {
+                check() {
+                  throw new Error('Rule error!');
+                }
+              };
+            }
+          })
+        }
+      }
+    });
+  }
+
+  beforeEach(function() {
+    container = TestContainer.get(this);
+  });
+
+  // playground, cf. `npm start`
+  (singleStart ? it.only : it)('should show all categories', async function() {
+
+    // given
+    const modeler = createModeler({
+      'label-required': 'error',
+      'foo/info': 'info',
+      'foo/rule-error': 'error'
+    });
+
+    await modeler.importXML(require('./diagram.dmn'));
+
+    editor = modeler.getActiveViewer();
+
+    // when
+    editor.get('drdLinting').toggle(true);
+
+    await once(editor, 'linting.completed');
+
+    // then
+    expect(container.querySelector('.djsl-icon-error')).to.exist;
+    expect(container.querySelector('.djsl-icon-info')).to.exist;
+    expect(container.querySelector('.djsl-icon-rule-error')).to.exist;
+  });
+
+
+  it('should show info', async function() {
+
+    // given
+    const modeler = createModeler({ 'label-required': 'info' });
+
+    await modeler.importXML(require('./diagram.dmn'));
+
+    editor = modeler.getActiveViewer();
+
+    // when
+    editor.get('drdLinting').toggle(true);
+
+    await once(editor, 'linting.completed');
+
+    // then
+    expect(container.querySelector('button.djsl-button-info')).to.exist;
+    expect(container.querySelector('.djsl-icon-info')).to.exist;
+    expect(container.querySelector('li.info a[data-rule="label-required"]')).to.exist;
+  });
+
+
+  it('should show rule error on diagram level', async function() {
+
+    // given
+    const modeler = createModeler({ 'foo/rule-error': 'error' });
+
+    await modeler.importXML(require('./diagram.dmn'));
+
+    editor = modeler.getActiveViewer();
+
+    // when
+    editor.get('drdLinting').toggle(true);
+
+    await once(editor, 'linting.completed');
+
+    // then
+    expect(container.querySelector('button.djsl-button-rule-error')).to.exist;
+    expect(container.querySelector('button.djsl-button-error')).not.to.exist;
+    expect(container.querySelector('button.djsl-button-success')).not.to.exist;
+    expect(container.querySelector('button span').textContent).to.equal('0 Errors, 0 Warnings');
+    expect(container.querySelector('.djsl-icon-rule-error')).to.exist;
+
+    const entry = container.querySelector('a[data-rule="foo/rule-error"]');
+
+    expect(entry).to.exist;
+    expect(entry.dataset.message).to.equal('Rule error!');
+  });
+
+});
+
+
+function once(editor, event) {
+  return new Promise(resolve => editor.get('eventBus').once(event, resolve));
+}
