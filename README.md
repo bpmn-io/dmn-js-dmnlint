@@ -61,7 +61,7 @@ npm install
 npm start
 ```
 
-`npm start` opens the test suite in a debuggable browser, running a single test (`it.only` via `SINGLE_START`). Use `npm run dev` to run the full suite in watch mode.
+`npm start` opens the test suite in a debuggable browser, running a single test (`it.only` via `SINGLE_START`) that shows all report categories (error, info, rule error). Use `npm run dev` to run the full suite in watch mode.
 
 ## Credits
 

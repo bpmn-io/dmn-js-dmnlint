@@ -28,11 +28,18 @@
 .djsl-icon {
   background: white;
   border-radius: 100%;
-  display: inline-block;
   height: 20px;
-  line-height: 23px;
-  text-align: center;
   width: 20px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.djsl-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .djsl-icon-error {
@@ -47,6 +54,16 @@
   color: white;
 
   /* color: #f7c71a; */
+}
+
+.djsl-icon-info {
+  background-color: hsl(205, 100%, 45%);
+  color: white;
+}
+
+.djsl-icon-rule-error {
+  background-color: #888;
+  color: white;
 }
 
 .djsl-overlay {
@@ -99,6 +116,13 @@
   flex-direction: row;
 }
 
+.djsl-issues li svg {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 1px;
+}
+
 .djsl-issues li:not(:first-child) {
   margin-top: 7px;
 }
@@ -109,6 +133,14 @@
 
 .djsl-issues .warning svg {
   color: #f7c71a;
+}
+
+.djsl-issues .info svg {
+  color: hsl(205, 100%, 45%);
+}
+
+.djsl-issues .rule-error svg {
+  color: #888;
 }
 
 .djsl-issues a {
@@ -147,8 +179,10 @@
 }
 
 .djsl-button svg {
-  margin-top: -1px;
+  margin-top: 1px;
   margin-right: 10px;
+  width: .9em;
+  height: .9em;
 }
 
 .djsl-button-success {
@@ -163,5 +197,15 @@
 
 .djsl-button-warning {
   background-color: #f7c71a;
+  color: white;
+}
+
+.djsl-button-rule-error {
+  background-color: #888;
+  color: white;
+}
+
+.djsl-button-info {
+  background-color: hsl(205, 100%, 45%);
   color: white;
 }
