@@ -6,8 +6,9 @@
   "module": "dist/index.esm.js",
   "source": "lib/index.js",
   "scripts": {
-    "all": "run-s lint test distro",
+    "all": "run-s lint lint:theme test distro",
     "lint": "eslint .",
+    "lint:theme": "bpmn-io-theme-validate assets/css/dmn-js-drd-dmnlint.css",
     "start": "cross-env SINGLE_START=true npm run dev",
     "test": "karma start --no-auto-test --single-run",
     "dev": "karma start",
@@ -25,6 +26,7 @@
   "author": "Maciej Barelkowski <https://github.com/barmac>",
   "license": "MIT",
   "devDependencies": {
+    "@bpmn-io/theme": "^0.3.0",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "axe-core": "^4.14.0",
     "chai": "^6.3.0",

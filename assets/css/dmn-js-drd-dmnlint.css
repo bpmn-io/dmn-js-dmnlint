@@ -1,3 +1,36 @@
+/**
+ * Semantic tokens, copied from `@bpmn-io/theme` to style the components
+ * according to this theme.
+ *
+ * Names and values of the tokens should stay intact with the `@bpmn-io/theme`
+ * source of truth, to ensure matching styles and allow overrides with an
+ * alternative theme.
+ */
+.bio-theme-parent {
+  --bio-surface-subtle: hsl(225, 10%, 97%);
+  --bio-text: hsl(225, 10%, 15%);
+  --bio-text-subtle: hsl(225, 10%, 35%);
+  --bio-text-on-primary: hsl(0, 0%, 100%);
+  --bio-border: hsl(225, 10%, 75%);
+  --bio-danger: hsl(360, 100%, 45%);
+  --bio-info: hsl(205, 100%, 40%);
+  --bio-danger-marker: var(--bio-danger);
+  --bio-warning-marker: hsl(28, 100%, 45%);
+  --bio-success-marker: hsl(150, 86%, 30%);
+  --bio-info-marker: var(--bio-info);
+  --bio-radius-sm: 2px;
+}
+
+.djs-parent {
+  --djsl-color-info: var(--bio-info-marker);
+  --djsl-color-warning: var(--bio-warning-marker);
+  --djsl-color-error: var(--bio-danger-marker);
+  --djsl-color-rule-error: var(--bio-text-subtle);
+  --djsl-color-success: var(--bio-success-marker);
+
+  --djsl-font-color: var(--bio-text);
+}
+
 .djsl-overlay {
   z-index: 500;
 }
@@ -17,16 +50,16 @@
 
 .djsl-issues {
   padding: 8px;
-  color: #444;
+  color: var(--djsl-font-color);
   font-family: 'Arial', sans-serif;
   font-size: 12px;
-  background: #FAFAFA;
-  border: solid 1px #CCC;
-  border-radius: 2px;
+  background: var(--bio-surface-subtle);
+  border: solid 1px var(--bio-border);
+  border-radius: var(--bio-radius-sm);
 }
 
 .djsl-icon {
-  background: white;
+  background: var(--bio-text-on-primary);
   border-radius: 100%;
   height: 20px;
   width: 20px;
@@ -43,27 +76,23 @@
 }
 
 .djsl-icon-error {
-  background-color: #cc3300;
-  color: white;
-
-  /* color: #cc3300; */
+  background-color: var(--djsl-color-error);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-icon-warning {
-  background-color: #f7c71a;
-  color: white;
-
-  /* color: #f7c71a; */
+  background-color: var(--djsl-color-warning);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-icon-info {
-  background-color: hsl(205, 100%, 45%);
-  color: white;
+  background-color: var(--djsl-color-info);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-icon-rule-error {
-  background-color: #888;
-  color: white;
+  background-color: var(--djsl-color-rule-error);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-overlay {
@@ -128,23 +157,23 @@
 }
 
 .djsl-issues .error svg {
-  color: #cc3300;
+  color: var(--djsl-color-error);
 }
 
 .djsl-issues .warning svg {
-  color: #f7c71a;
+  color: var(--djsl-color-warning);
 }
 
 .djsl-issues .info svg {
-  color: hsl(205, 100%, 45%);
+  color: var(--djsl-color-info);
 }
 
 .djsl-issues .rule-error svg {
-  color: #888;
+  color: var(--djsl-color-rule-error);
 }
 
 .djsl-issues a {
-  color: #444;
+  color: var(--djsl-font-color);
   margin-left: 8px;
   text-decoration: none;
 }
@@ -164,10 +193,10 @@
   bottom: 20px;
   left: 50%;
   transform: translate(-50%);
-  background-color: #fafafa;
+  background-color: var(--bio-surface-subtle);
   padding: 5px 10px;
   border: none;
-  color: #ddd;
+  color: var(--bio-text-subtle);
   display: flex;
   align-items: center;
   outline: none;
@@ -175,7 +204,7 @@
 }
 
 .djsl-button-inactive:hover {
-  color: #444;
+  color: var(--bio-text);
 }
 
 .djsl-button svg {
@@ -186,26 +215,26 @@
 }
 
 .djsl-button-success {
-  background-color: #52b415;
-  color: white;
+  background-color: var(--djsl-color-success);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-button-error {
-  background-color: #cc3300;
-  color: white;
+  background-color: var(--djsl-color-error);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-button-warning {
-  background-color: #f7c71a;
-  color: white;
+  background-color: var(--djsl-color-warning);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-button-rule-error {
-  background-color: #888;
-  color: white;
+  background-color: var(--djsl-color-rule-error);
+  color: var(--bio-text-on-primary);
 }
 
 .djsl-button-info {
-  background-color: hsl(205, 100%, 45%);
-  color: white;
+  background-color: var(--djsl-color-info);
+  color: var(--bio-text-on-primary);
 }
