@@ -1,7 +1,0 @@
-assets
-test
-lib
-!dist/*
-eslint.config.mjs
-karma.conf.js
-rollup.config.js
